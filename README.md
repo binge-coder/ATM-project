@@ -12,7 +12,7 @@ This is a project made for the subject object oriented programming
 ## How to build and run
 1. Have a c++ compiler
 2. open terminal in the downloaded folder
-3. write this in terminal:
+3. write this in terminal to build an exe file:
 ```
 g++ atm.cpp -o atm.exe
 ```
