@@ -11,9 +11,10 @@ using namespace std;
 
 class Account
 {
-    int acnumber = 55555; //account number of customer
-    int pinNumber = 99999; //pin number of customer
-    int AccountBalance = 0; //default account balance
+    private:
+        int acnumber = 55555; //account number of customer
+        int pinNumber = 99999; //pin number of customer
+        int AccountBalance = 0; //default account balance
 
     public:
         bool CheckCustomerDetails();
@@ -66,7 +67,7 @@ bool Account::CheckCustomerDetails() {
 }
 
 int Account::MenuDisplay() {
- 
+// to display the menu to the customer and return the input value to main function
     int UserInputOption = -1;
  
     cout << "Welcome to Your Account!! Please choose Option to Proceed" << endl;
@@ -82,14 +83,14 @@ int Account::MenuDisplay() {
 }
 
 void Account::DisplayAccountBalance() {
- 
+// function of class Account (to display account balance)
     cout << "You Account Balance is:" << endl;
     cout << "Rupees " << AccountBalance << endl;
  
 }
 
 void Account::WithdrawMoney() { 
-   
+// function of class Account (to withdraw money from account)
     int valueToWithdraw = 0;
     long CustomerRequest = 0;
     bool isNotFinished = true;
@@ -135,7 +136,7 @@ void Account::WithdrawMoney() {
 }
 
 void Account::DepositMoney() {
- 
+// function of class Account (to deposit money into account) 
     int UserInputOption = -1;
     bool isNotFinished = true;
     long depositAmount = 0;
