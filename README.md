@@ -20,3 +20,7 @@ g++ atm.cpp -o atm.exe
 ```
 ./atm.exe
 ```
+
+## Explanations
+* The code has comments wherever needed and the variable names are self explanatory as well. Also, this project uses object oriented approach to solve the problem hence the code is easy to understand for anyone familiar with c++
+* code readability has been a focus of ours in developing this project
