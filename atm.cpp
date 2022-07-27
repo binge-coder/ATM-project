@@ -8,52 +8,22 @@ Pin number is set as 99999
 
 #include <iostream>
 using namespace std;
-  
-//GLOBAL DEFAULTS
-int acnumber = 55555; //account number of customer
-int pinNumber = 99999; //pin number of customer
-int AccountBalance = 0; //default account balance
 
-//FUNCTIONS THAT WERE USED (DECLARATIONS)
-bool CheckCustomerDetails();
-int MenuDisplay();
-void DisplayAccountBalance();
-void WithdrawMoney();
-void DepositMoney();
+class Account
+{
+    int acnumber = 55555; //account number of customer
+    int pinNumber = 99999; //pin number of customer
+    int AccountBalance = 0; //default account balance
 
-int main() {
-    if (CheckCustomerDetails()) {
- 
-        int isNotFinished = true;
- 
-        do {
- 
-            switch (MenuDisplay()) {
-            case 1:
-                DisplayAccountBalance();
-                break;
-            case 2:
-                WithdrawMoney();
-                break;
-            case 3:
-                DepositMoney();
-                break;
-            case 4:
-                isNotFinished = false;
-                break;
-            default:
-                cout << "Invalid option! Try again." << endl;
-                break;
-            }
- 
-        } while (isNotFinished);
- 
-    }
-    return 0;
- 
-}
+    public:
+        bool CheckCustomerDetails();
+        int MenuDisplay();
+        void DisplayAccountBalance();
+        void WithdrawMoney();
+        void DepositMoney();
+};
 
-bool CheckCustomerDetails() {
+bool Account::CheckCustomerDetails() {
 
     int InputAccountNumber = -1;
     int InputPinNumber = -1;
@@ -95,7 +65,7 @@ bool CheckCustomerDetails() {
     return true;
 }
 
-int MenuDisplay() {
+int Account::MenuDisplay() {
  
     int UserInputOption = -1;
  
@@ -111,14 +81,14 @@ int MenuDisplay() {
  
 }
 
-void DisplayAccountBalance() {
+void Account::DisplayAccountBalance() {
  
     cout << "You Account Balance is:" << endl;
-    cout << "Rupees" << AccountBalance << endl;
+    cout << "Rupees " << AccountBalance << endl;
  
 }
 
-void WithdrawMoney() { 
+void Account::WithdrawMoney() { 
    
     int valueToWithdraw = 0;
     long CustomerRequest = 0;
@@ -151,7 +121,7 @@ void WithdrawMoney() {
  
         if (valueToWithdraw != 0) {
             if (valueToWithdraw > AccountBalance) {
-                cout << "Sorry!! Your Account Balance is Only Rupees" << AccountBalance << ". You can't withdraw Rupees" << valueToWithdraw << endl;
+                cout << "Sorry!! Your Account Balance is Only Rupees " << AccountBalance << ". You can't withdraw Rupees " << valueToWithdraw << endl;
             }
             else {
                 AccountBalance = AccountBalance - valueToWithdraw;
@@ -164,7 +134,7 @@ void WithdrawMoney() {
  
 }
 
-void DepositMoney() {
+void Account::DepositMoney() {
  
     int UserInputOption = -1;
     bool isNotFinished = true;
@@ -196,4 +166,37 @@ void DepositMoney() {
  
     } while (isNotFinished);
  
+}
+
+int main()
+{
+    Account obj;
+    if (obj.CheckCustomerDetails()) {
+ 
+        int isNotFinished = true;
+ 
+        do {
+ 
+            switch (obj.MenuDisplay()) {
+            case 1:
+                obj.DisplayAccountBalance();
+                break;
+            case 2:
+                obj.WithdrawMoney();
+                break;
+            case 3:
+                obj.DepositMoney();
+                break;
+            case 4:
+                isNotFinished = false;
+                break;
+            default:
+                cout << "Invalid option! Try again." << endl;
+                break;
+            }
+ 
+        } while (isNotFinished);
+ 
+    }
+    return 0;
 }
