@@ -2,7 +2,7 @@
 This is a project made for the subject object oriented programming
 
 ## Project Members
-* Karan Kanwar (CO21329)
+* Karan Kanwar (CO21329) [@binge-coder on github](https://github.com/binge-coder)
 * Prince Kumar (CO21348)
 
 ## Language
